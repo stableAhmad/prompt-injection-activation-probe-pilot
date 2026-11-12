@@ -2,7 +2,7 @@
 
 **Ahmed Abdelsalam**, M.Sc. student, Alexandria University. Technical report, November 2026. Pilot for an M.Sc. thesis in progress.
 
-*Every number in this report was produced by the accompanying notebook; all values are stored in `results/results.json`.*
+*Every number in this report was produced by the accompanying notebook; all values are stored in `results.json`.*
 
 ---
 
@@ -90,7 +90,7 @@ It is preceded by TaskTracker's system message ("you are a helpful assistant tha
 | Hard negatives flagged as injected (probe / text baseline) | 0.138 / 0.225 |
 | Sanity: before-only probe / shuffled-label probe, test AUC (should be ≈ 0.5) | 0.500 / 0.674 |
 
-![Test ROC AUC by layer for the delta probe, the plain-activation probe, and the text-only baseline](../results/auc_by_layer.png)
+![Test ROC AUC by layer for the delta probe, the plain-activation probe, and the text-only baseline](auc_by_layer.png)
 
 *Figure 1. Test ROC AUC by layer. The vertical line marks the layer chosen by cross-validation on the training set.*
 

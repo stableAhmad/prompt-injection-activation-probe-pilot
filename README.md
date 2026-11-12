@@ -58,7 +58,7 @@ Single run on Qwen/Qwen2.5-0.5B-Instruct (cuda, torch 2.14.1+cu130, transformers
 | Hard negatives flagged as injected (probe / text baseline) | 0.138 / 0.225 |
 | Sanity: before-only probe / shuffled-label probe, test AUC (should be ≈ 0.5) | 0.500 / 0.674 |
 
-![Test ROC AUC by layer](results/auc_by_layer.png)
+![Test ROC AUC by layer](auc_by_layer.png)
 
 **In plain words.** A linear probe on the activation delta at layer 12 (chosen on training data only) separated injected from clean test texts with ROC AUC 0.977. The delta probe did better than the text-only TF-IDF baseline (0.977 vs 0.905 ROC AUC). Subtracting the 'before' activation made little difference here: the best plain-activation probe reached 0.977 (layer 12). Harmless imperative sentences fooled the probe more often than plain clean text (false-positive rate 0.138 vs 0.025), so part of what it detects is instruction-like wording rather than task drift. When the probe's training data was changed slightly, the 10 resulting probes reached AUC 0.970 ± 0.008, but they were not unanimous on 6.9% of the test inputs. In the optional obedience check, the injection's marker string appeared in the model's answer for 0.133 of 60 injected test examples (chance level from the clean versions: 0.000). This is a rough string rule, not a judge.
 
@@ -95,8 +95,10 @@ Detection by attack style (delta probe, layer 12):
 | File | What it is |
 |---|---|
 | `pilot_activation_probe.ipynb` | The whole pilot, with plain-language explanations. Runs on free Colab. |
-| `results/` | `results.json` (all numbers), `results_table.md`, `auc_by_layer.png`, `dataset.jsonl` (every example) |
-| `report/pilot_report.md` | A short technical report of the pilot |
+| `results.json`, `results_table.md` | All numbers from the run, and the summary table |
+| `auc_by_layer.png` | Test ROC AUC by layer (the figure above) |
+| `dataset.jsonl` | Every train and test example |
+| `pilot_report.md` | A short technical report of the pilot |
 
 ## How to run
 
