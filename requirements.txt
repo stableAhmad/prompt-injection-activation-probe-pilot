@@ -1,0 +1,9 @@
+# Free Google Colab already has all of these. Exact versions used are saved in results/results.json.
+# Code checked locally (CPU smoke test) with torch 2.15.0, transformers 5.22.2, datasets 5.2.0,
+# scikit-learn 1.9.1, numpy 2.5.4, matplotlib 3.11.2.
+torch>=2.1
+transformers>=4.43
+datasets>=2.19
+scikit-learn>=1.3
+numpy>=1.24
+matplotlib>=3.7
